@@ -118,11 +118,13 @@
 {
     url: "https://example.edu/",
     posibility: 0.015,
-    characterImage: "school-nailong.jpg",
+    characterImage: "school-nailong.png",
     mascotAlt: "学校专属形象",
     theme: "school-theme"
 }
 ```
+
+`characterImage` 建议使用**透明底 PNG**：形象会浮在倒计时的水面上并随水位下降，带白底的图会出现方块边缘。仓库里的 `tools/make-transparent.py` 可以把白底素材批量转成透明 PNG。
 
 使用学校、品牌或角色名称及图片素材时，应确认拥有相应授权，避免造成官方背书或合作关系的误解。项目中的跳转、广告和素材配置也应遵守目标站点、广告平台以及适用法律法规的要求。
 
