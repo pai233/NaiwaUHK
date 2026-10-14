@@ -132,7 +132,7 @@ config = [
         posibility: 0.015
     },
     {
-        url: "https://www.bnuz.edu.cn/",
+        url: "https://www.bnbu.edu.cn/",
         posibility: 0.015
     }
 ]
