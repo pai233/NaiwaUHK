@@ -1,6 +1,6 @@
 window.siteStartTime = "2026-10-13T12:00:00+08:00";
 window.defaultCharacterImage = "default-nailoong.png";
-window.defaultMascotAlt = "默认奶蛙形象";
+window.defaultMascotAlt = "預設奶蛙形象";
 
 window.themes = {
     default: {
@@ -51,30 +51,30 @@ window.themes = {
     }
 };
 
-// 伪加载文案池：随机洗牌后按序播放，每 1.25 秒换一条。
-// {host} 会替换成当前抽到的目标域名，直接改下面这些字符串即可。
+// 偽載入文案池：隨機洗牌後按順序播放，每 1.25 秒更換一條。
+// {host} 會替換成目前抽中的目標網域，直接修改以下字串即可。
 window.loadingMessages = [
-    "正在核对奶蛙的学籍状态…",
-    "正在向教务处申请延毕…",
-    "正在给 {host} 的服务器浇水…",
-    "正在为奶蛙办理跨校交换手续…",
-    "正在向 {host} 的服务器投喂鱼食…",
-    "正在移动奶蛙",
-    "正在召唤奶龙"];
+    "正在核對奶蛙的學籍狀態…",
+    "正在向教務處申請延畢…",
+    "正在為 {host} 的伺服器澆水…",
+    "正在為奶蛙辦理跨校交換手續…",
+    "正在向 {host} 的伺服器投餵魚糧…",
+    "正在移動奶蛙",
+    "正在召喚奶龍"];
 
 config = [
     {
         url: "https://cityu-dg.edu.cn/",
         posibility: 0.7,
         characterImage: "cityu-nailoong.png",
-        mascotAlt: "CityU 奶龙形象",
+        mascotAlt: "CityU 奶龍形象",
         theme: "cityu"
     },
     {
         url: "https://www.cityu.edu.hk/",
         posibility: 0.15,
         characterImage: "cityu-nailoong.png",
-        mascotAlt: "CityU 奶龙形象",
+        mascotAlt: "CityU 奶龍形象",
         theme: "cityu"
     },
     {

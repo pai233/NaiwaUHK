@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="zh-HK">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="description" content="页面跳转中">
+  <meta name="description" content="網頁跳轉中">
   <meta name="theme-color" content="#fff8f3">
-  <title>正在跳转</title>
+  <title>香港奶蛙大學</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <style>
@@ -697,14 +697,14 @@
   </div>
   <div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
 
-  <!-- 页眉编辑区域：可替换品牌、导航或其他内容 -->
+  <!-- 頁首編輯區域：可替換品牌、導覽或其他內容 -->
   <header>
     <div class="brand">香港奶蛙大學</div>
     <div class="header-actions">
       <div class="header-note">NAIWA UNIVERSITY OF HONG KONG</div>
       <a class="repository-link" href="https://github.com/pai233/NaiwaUHK" target="_blank" rel="noopener noreferrer">
         <i class="fa-brands fa-github" aria-hidden="true"></i>
-        项目仓库
+        專案儲存庫
       </a>
     </div>
   </header>
@@ -712,10 +712,10 @@
   <main>
     <section class="panel" aria-live="polite">
       <p class="eyebrow">One moment</p>
-      <h1>正在为你跳转</h1>
-      <p class="target" id="target">正在读取目标学校...</p>
+      <h1>正在為你跳轉</h1>
+      <p class="target" id="target">正在讀取目標學校…</p>
 
-      <div class="countdown" id="countdown" role="timer" aria-label="倒计时 5 秒">
+      <div class="countdown" id="countdown" role="timer" aria-label="倒數 5 秒">
         <svg class="liquid" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
           <defs>
             <clipPath id="liquid-clip">
@@ -743,7 +743,7 @@
           <circle class="liquid-ring" cx="100" cy="100" r="97"/>
         </svg>
         <div class="liquid-rider" id="liquid-rider">
-          <img class="rider-mascot" id="mascot" src="default-nailoong.png" alt="默认奶蛙形象">
+          <img class="rider-mascot" id="mascot" src="default-nailoong.png" alt="預設奶蛙形象">
         </div>
         <div class="countdown-readout">
           <div>
@@ -753,15 +753,15 @@
         </div>
       </div>
 
-      <p class="loading-note" id="loading-note">正在准备跳转…</p>
-      <p class="message" id="message">页面将在 5 秒后自动打开</p>
+      <p class="loading-note" id="loading-note">正在準備跳轉…</p>
+      <p class="message" id="message">網頁將於 5 秒後自動開啟</p>
       <a class="fallback" id="fallback" href="#">立即前往</a>
     </section>
   </main>
 
-  <!-- 页脚编辑区域：可替换版权、联系方式或其他内容 -->
+  <!-- 頁尾編輯區域：可替換版權、聯絡方式或其他內容 -->
   <footer>
-    <p class="runtime" id="runtime">本站已运行中...</p>
+    <p class="runtime" id="runtime">本站已運行中…</p>
     <a class="github-link" href="https://github.com/pai233" target="_blank" rel="noopener noreferrer">GitHub @pai233</a>
   </footer>
 
@@ -782,7 +782,7 @@
       const hours = Math.floor((elapsedSeconds % 86400) / 3600);
       const minutes = Math.floor((elapsedSeconds % 3600) / 60);
       const seconds = elapsedSeconds % 60;
-      runtimeElement.textContent = `本站已运行 ${days} 天 ${hours} 小时 ${minutes} 分 ${seconds} 秒`;
+      runtimeElement.textContent = `本站已運行 ${days} 日 ${hours} 小時 ${minutes} 分鐘 ${seconds} 秒`;
     }
 
     updateRuntimeText();
@@ -854,14 +854,14 @@
       });
 
       mascotElement.src = school.characterImage || window.defaultCharacterImage || "default-nailoong.png";
-      mascotElement.alt = school.mascotAlt || window.defaultMascotAlt || "默认奶蛙形象";
+      mascotElement.alt = school.mascotAlt || window.defaultMascotAlt || "預設奶蛙形象";
     }
 
     const selectedSchool = getSelectedSchool();
     applySchoolTheme(selectedSchool);
     const redirectUrl = selectedSchool.url;
     const targetHost = new URL(redirectUrl).hostname;
-    targetElement.textContent = `即将前往：${targetHost}`;
+    targetElement.textContent = `即將前往：${targetHost}`;
     fallbackElement.href = redirectUrl;
 
     const totalSeconds = 5;
@@ -893,8 +893,8 @@
       }
       displayedSecond = shown;
       secondsElement.textContent = String(shown);
-      countdownElement.setAttribute("aria-label", `倒计时 ${shown} 秒`);
-      messageElement.textContent = shown > 0 ? `页面将在 ${shown} 秒后自动打开` : "正在打开目标页面...";
+      countdownElement.setAttribute("aria-label", `倒數 ${shown} 秒`);
+      messageElement.textContent = shown > 0 ? `網頁將於 ${shown} 秒後自動開啟` : "正在開啟目標網頁…";
       countdownElement.classList.toggle("is-final", shown === 1);
 
       if (canPop && shown > 0) {
@@ -914,7 +914,7 @@
       renderCountdown(remaining);
 
       if (remaining <= 0) {
-        messageElement.textContent = "正在打开目标页面...";
+        messageElement.textContent = "正在開啟目標網頁…";
         window.location.href = redirectUrl;
         return;
       }
