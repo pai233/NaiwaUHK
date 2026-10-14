@@ -1,5 +1,5 @@
 window.siteStartTime = "2026-10-13T12:00:00+08:00";
-window.defaultCharacterImage = "default-nailoong.png";
+window.defaultCharacterImage = "assets/default-nailoong.png";
 window.defaultMascotAlt = "預設奶蛙形象";
 
 window.themes = {
@@ -59,21 +59,36 @@ window.loadingMessages = [
     "正在為 {host} 的伺服器澆水…",
     "正在為奶蛙辦理跨校交換手續…",
     "正在向 {host} 的伺服器投餵魚糧…",
-    "正在移動奶蛙",
-    "正在召喚奶龍"];
+    "正在移動奶蛙…",
+    "正在召喚奶龍…",
+    "正在替奶蛙整理書包…",
+    "正在確認奶蛙今日有沒有帶八達通…",
+    "正在排隊等候校巴入站…",
+    "正在為奶蛙預留靠窗座位…",
+    "正在向茶餐廳申請一杯凍檸茶…",
+    "正在為奶蛙蓋好被仔…",
+    "正在檢查奶蛙有沒有偷偷打機…",
+    "正在為奶蛙安排課室…",
+    "正在載入今日份的好心情…",
+    "正在通知奶蛙：準備落堂喇…",
+    "正在等候網絡訊號飲完下午茶…",
+    "正在為跨校旅程準備雨傘…",
+    "正在確認這不是一隻迷路的奶蛙…",
+    "正在替奶龍整理飛行路線…",
+    "正在向 {host} 發送一聲蛙叫…"];
 
 config = [
     {
         url: "https://cityu-dg.edu.cn/",
         posibility: 0.7,
-        characterImage: "cityu-nailoong.png",
+        characterImage: "assets/cityu-nailoong.png",
         mascotAlt: "CityU 奶龍形象",
         theme: "cityu"
     },
     {
         url: "https://www.cityu.edu.hk/",
         posibility: 0.15,
-        characterImage: "cityu-nailoong.png",
+        characterImage: "assets/cityu-nailoong.png",
         mascotAlt: "CityU 奶龍形象",
         theme: "cityu"
     },
