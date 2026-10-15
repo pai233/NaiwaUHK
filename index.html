@@ -185,6 +185,51 @@
     targetElement.textContent = `即將前往：${targetHost}`;
     fallbackElement.href = redirectUrl;
 
+    // 倒數期間提前「預熱」目標網站：DNS 解析、TCP/TLS 握手、文件預取與預渲染
+    // 都在背景完成，倒數結束真正跳轉時即可秒開。
+    function warmUpTarget(url) {
+      const targetOrigin = new URL(url).origin;
+
+      const hints = [
+        { rel: "dns-prefetch", href: targetOrigin },
+        { rel: "preconnect", href: targetOrigin, crossOrigin: "" },
+        { rel: "prefetch", href: url, as: "document" }
+      ];
+
+      hints.forEach((hint) => {
+        const link = document.createElement("link");
+        link.rel = hint.rel;
+        link.href = hint.href;
+        if ("crossOrigin" in hint) {
+          link.crossOrigin = hint.crossOrigin;
+        }
+        if (hint.as) {
+          link.as = hint.as;
+        }
+        document.head.appendChild(link);
+      });
+
+      // Speculation Rules API：支援的瀏覽器（Chrome/Edge 109+）會在背景完整預渲染
+      // 目標頁面，跳轉時直接激活；不支援的瀏覽器會自動忽略此標籤。
+      try {
+        const speculation = document.createElement("script");
+        speculation.type = "speculationrules";
+        speculation.textContent = JSON.stringify({
+          prefetch: [
+            { source: "list", urls: [url], eagerness: "immediate" }
+          ],
+          prerender: [
+            { source: "list", urls: [url], eagerness: "immediate" }
+          ]
+        });
+        document.head.appendChild(speculation);
+      } catch (error) {
+        // 靜默降級：預渲染失敗不影響正常跳轉
+      }
+    }
+
+    warmUpTarget(redirectUrl);
+
     const totalSeconds = 5;
     const countdownElement = document.getElementById("countdown");
     const secondsElement = document.getElementById("seconds");
